@@ -31,17 +31,14 @@ class LaravelOauthConsumerServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array('oauth-consumer');
+        $this->app['laravel-oauth-consumer'] = $this->app->share( function( $app ) {
+            return new OauthConsumer;
+        } );
+        $this->app->booting(function()
+        {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias('OauthConsumer', 'Omgwagon\LaravelOauthConsumer\Facades\OauthConsumer');
+        });
     }
 
 }
