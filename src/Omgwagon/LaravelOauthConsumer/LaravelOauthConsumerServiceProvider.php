@@ -32,7 +32,7 @@ class LaravelOauthConsumerServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app['laravel-oauth-consumer'] = $this->app->share( function( $app ) {
-            return new OauthLti;
+            return new OauthConsumer;
         } );
         $this->app->booting(function()
         {
