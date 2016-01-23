@@ -21,7 +21,7 @@ class LaravelOauthConsumerServiceProvider extends ServiceProvider {
     */
     public function boot()
     {
-        $this->package('omgwagon/laravel-oauth-consumer');
+        //
     }
 
     /**
@@ -31,8 +31,8 @@ class LaravelOauthConsumerServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['laravel-oauth-consumer'] = $this->app->share( function( $app ) {
-            return new OauthConsumer;
+        $this->app['oauth-consumer'] = $this->app->share( function( $app ) {
+            return new LaravelOauthConsumer;
         } );
         $this->app->booting(function()
         {
