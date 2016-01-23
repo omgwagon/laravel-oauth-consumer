@@ -1,0 +1,7 @@
+{
+    "name": "omgwagon/laravel-oauth-consumer",
+    "description": "An OAuth 1.0 Consumer package to be used for signing OAuth messages",
+    "require": {
+        "php": ">=5.3.0",
+    }
+}
