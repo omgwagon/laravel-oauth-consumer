@@ -7,7 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Omgwagon\\LaravelOauthConsumer\\": "src/"
+            "Omgwagon\\LaravelOauthConsumer\\": "src/Omgwagon/LaravelOauthConsumer"
         }
     }
 }
